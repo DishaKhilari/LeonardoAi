@@ -1,0 +1,29 @@
+{
+  "name": "text-to-image-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npx ts-node src/hooks/init.ts",
+    "test": "cross-env ENV=prod cucumber-js test",
+    "k6": "k6 run src/K6/loadtest.js",
+    "test:failed": "cucumber-js -p failedScenario @failedScenario.txt",
+    "report": "npx ts-node src/helper/report/report.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.11.22",
+    "cross-env": "^7.0.3",
+    "cucumber-html-reporter": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1",
+    "multiple-cucumber-html-reporter": "^3.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "wdio-cucumberjs-json-reporter": "^5.1.8"
+  }
+}
