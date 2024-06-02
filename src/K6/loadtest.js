@@ -10,7 +10,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('https://httpbin.test.k6.io/');
+  const res = http.get('https://app.leonardo.ai/');
   check(res, { 'status was 200': (r) => r.status == 200 });
   sleep(1);
 }
