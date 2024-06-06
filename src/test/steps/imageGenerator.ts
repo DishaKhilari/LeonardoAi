@@ -101,12 +101,12 @@ Given('a prompt of {string}', async function (prompt) {
 
 When('Alchemy turned off', async function () {
   // Write code here that turns the phrase above into concrete actions
-  let AlchemyButton = `//div[@class='css-0']`
+  let AlchemyButton = `(//*[text()='Alchemy']//following::span[@class='chakra-switch__thumb css-y1p53o'])[1]`
 
   await pageFixture.page.waitForSelector(AlchemyButton, { state: 'visible' });
   const isActive = await pageFixture.page.locator(`${AlchemyButton}[data-active]`).isVisible();
   if (!isActive) {
-    await pageFixture.page.locator(AlchemyButton).nth(2).click();
+    await pageFixture.page.locator(AlchemyButton).click();
   }
 
 });
